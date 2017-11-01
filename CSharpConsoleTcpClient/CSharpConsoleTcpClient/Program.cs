@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * a simple module for our chess client connection
+ * learned from Tech CBT
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -8,8 +13,10 @@ namespace CSharpConsoleTcpClient
 {
     class Program
     {
+        //this is a Ubuntu Server on AWS EC2
         static string HOST = "18.216.21.142";
         static int PORT = 9000;
+
         static TcpClient client;
 
         static void OpenConnection()
@@ -59,6 +66,7 @@ namespace CSharpConsoleTcpClient
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("---connection closed successfully---");
         }
+        //TCP connection send Data through bytes
         static void SendData(string data)
         {
             if (client == null)
@@ -76,6 +84,8 @@ namespace CSharpConsoleTcpClient
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
 
             //receiving
+            //the server is set to send back a message
+            //note that the function of the server may be modified in the future
             byte[] bytesToRead = new byte[client.ReceiveBufferSize];
             int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -108,8 +118,6 @@ namespace CSharpConsoleTcpClient
                         CloseConnection();
                         break;
                 }
-
-
 
             } while (!lineRead.Equals("4"));
         }
