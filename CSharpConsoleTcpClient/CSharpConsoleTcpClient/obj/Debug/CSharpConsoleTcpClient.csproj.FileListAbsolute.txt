@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\大三上\網路\期末專案\CSharpConsoleTcpClient\CSharpConsoleTcpClient\bin\Debug\CSharpConsoleTcpClient.exe
+C:\Users\User\Desktop\大三上\網路\期末專案\CSharpConsoleTcpClient\CSharpConsoleTcpClient\bin\Debug\CSharpConsoleTcpClient.pdb
+C:\Users\User\Desktop\大三上\網路\期末專案\CSharpConsoleTcpClient\CSharpConsoleTcpClient\obj\Debug\CSharpConsoleTcpClient.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\大三上\網路\期末專案\CSharpConsoleTcpClient\CSharpConsoleTcpClient\obj\Debug\CSharpConsoleTcpClient.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\大三上\網路\期末專案\CSharpConsoleTcpClient\CSharpConsoleTcpClient\obj\Debug\CSharpConsoleTcpClient.exe
+C:\Users\User\Desktop\大三上\網路\期末專案\CSharpConsoleTcpClient\CSharpConsoleTcpClient\obj\Debug\CSharpConsoleTcpClient.pdb
