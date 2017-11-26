@@ -1,0 +1,15 @@
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\bin\Debug\Chinese_Chess.exe.config
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\bin\Debug\Chinese_Chess.exe
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\bin\Debug\Chinese_Chess.pdb
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\MainWindow.g.cs
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\App.g.cs
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess_MarkupCompile.cache
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess_MarkupCompile.lref
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\MainWindow.baml
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess.g.resources
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess.csproj.GenerateResource.Cache
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess.exe
+C:\Users\user\Documents\GitHub\chess\Chinese_Chess\Chinese_Chess\obj\Debug\Chinese_Chess.pdb
