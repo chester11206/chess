@@ -5,16 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:START"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="650" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/image/background.png?raw=true"></ImageBrush>
+        </Grid.Background>
         <Grid Name="Start">
-             <Grid.Background>
-                <ImageBrush ImageSource="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/Chinese_Chess/Resources/temp.jpg?raw=true"></ImageBrush>
-            </Grid.Background>
-            <Button Height="30" Width="100" BorderThickness="0" Background="PaleGoldenrod" Click="Start_Button_Click">START</Button>
+            <Image Height="169" Width="577" Margin="117,188,101.2,265.8" Source="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/image/elephant%20chess.png?raw=true"/>
+            <Button BorderThickness="0" Background="Bisque" Click="Start_Button_Click" Margin="272,381,289.2,184.8" FontSize="36">START</Button>
         </Grid>
         <Grid Name="InputName" Visibility="Hidden">
-            
+            <Image Margin="178,220,177.2,303.8" Source="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/image/enterName.png?raw=true"/>
+            <TextBox x:Name="Username" BorderThickness="0" Height="50" TextWrapping="Wrap" Text="" FontSize="40" VerticalAlignment="Top" Width="297" Margin="223,324,275.2,0" Background="PapayaWhip"/>
+            <Button Width="50" Height="50" Margin="525,324,220.2,248.8" BorderThickness="0" Background="#fff" FontSize="40" Foreground="Peru" Click="Name_Button_Click">√</Button>
+        </Grid>
+        <Grid Name="OnlineGame" Visibility="Hidden">
+            <Image Source="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/image/images.png?raw=true" Margin="123,73,121.2,73.8"></Image>
+            <Label x:Name="username" Height="52" Margin="603,21,10.2,549.8" FontSize="32"/>
         </Grid>
     </Grid>
 </Window>

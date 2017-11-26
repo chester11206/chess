@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace START
+namespace WpfApp1
 {
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
@@ -23,18 +23,6 @@ namespace START
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Start_Button_Click(object sender, RoutedEventArgs e)
-        {
-            Start.Visibility = System.Windows.Visibility.Hidden;
-            InputName.Visibility = System.Windows.Visibility.Visible;
-        }
-        private void Name_Button_Click(object sender, RoutedEventArgs e)
-        {
-            InputName.Visibility = System.Windows.Visibility.Hidden;
-            OnlineGame.Visibility = System.Windows.Visibility.Visible;
-            username.DataContext = Username.Text.ToString();
         }
     }
 }
