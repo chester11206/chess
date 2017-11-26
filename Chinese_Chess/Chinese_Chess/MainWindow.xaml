@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="temp.jpg"></ImageBrush>
+            <ImageBrush ImageSource="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/Chinese_Chess/Resources/temp.jpg?raw=true"></ImageBrush>
         </Grid.Background>
     </Grid>
 </Window>
