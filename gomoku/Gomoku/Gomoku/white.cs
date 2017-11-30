@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gomoku
 {
-    class white : Piece
+    class white
     {
         public white(int x, int y) : base(x, y)
         {
