@@ -6,11 +6,20 @@
         xmlns:local="clr-namespace:START"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="800">
-    <Grid>
+    <Grid Name="main">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="236*"/>
+        </Grid.ColumnDefinitions>
+        <UniformGrid Name="ChessBoard_Up" Width="500" Height="250" Grid.Column="4" Margin="80,10,120,362.8" ></UniformGrid>
+        <Grid Width="500" Height="80" Margin="83.8,276,124.2,286.8" Grid.Column="1" Background="#E79460"></Grid>
+        <UniformGrid Name="ChessBoard_Down" Width="500" Height="250" Grid.Column="4" Margin="80,344,120,10" ></UniformGrid>
+
+        <!--
         <Grid.Background>
             <ImageBrush ImageSource="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/image/background.png?raw=true"></ImageBrush>
         </Grid.Background>
-        <Grid Name="Start">
+        <Grid Name="Start" Visibility="Hidden">
             <Image Height="169" Width="577" Margin="117,188,101.2,265.8" Source="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/image/elephant%20chess.png?raw=true"/>
             <Button BorderThickness="0" Background="Bisque" Click="Start_Button_Click" Margin="272,381,289.2,184.8" FontSize="36">START</Button>
         </Grid>
@@ -19,9 +28,13 @@
             <TextBox x:Name="Username" BorderThickness="0" Height="50" TextWrapping="Wrap" Text="" FontSize="40" VerticalAlignment="Top" Width="297" Margin="223,324,275.2,0" Background="PapayaWhip"/>
             <Button Width="50" Height="50" Margin="525,324,220.2,248.8" BorderThickness="0" Background="#fff" FontSize="40" Foreground="Peru" Click="Name_Button_Click">√</Button>
         </Grid>
-        <Grid Name="OnlineGame" Visibility="Hidden">
+        <Grid Name="OnlineGame" Visibility="Visible">
             <Image Source="https://github.com/yuyuanhey/chess/blob/master/Chinese_Chess/image/images.png?raw=true" Margin="123,73,121.2,73.8"></Image>
             <Label x:Name="username" Height="52" Margin="603,21,10.2,549.8" FontSize="32"/>
         </Grid>
+        <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100">
+            <StackPanel Height="100"/>
+        </StackPanel>
+        -->
     </Grid>
 </Window>
