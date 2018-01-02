@@ -1,5 +1,4 @@
 var net = require('net');
-var colors = require("chalk");
 var server = net.createServer();
 var clients=[];
 var clientsNum=0;
@@ -38,9 +37,9 @@ function router(d, socket){
 
     switch(d.charAt(0)){
         case '0':       //連上伺服器，傳入名稱
-            socket.name=data;
+            socket.name=data;        
+            //socket.write("M"+"Hello "+ socket.name+", Welcome to CHESSther, please only type English OAO ");
             SendAll(onlineList());
-            socket.write("M"+"Hello "+ socket.name+", Welcome to CHESSther, please only type English OAO ");
             break;
         case '1':
             SendAll(d);
