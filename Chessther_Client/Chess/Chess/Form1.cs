@@ -96,6 +96,7 @@ namespace Chess
                 switch (St)//依命令碼執行功能
                 {
                     case "5":
+                        canMove = true;
                         bool flag = false;
                         string[] C = Str.Split('|');
                         if(PieceExist(int.Parse(C[3]),int.Parse(C[4]))!=null){
@@ -105,7 +106,6 @@ namespace Chess
                         }
                         
                         piece[int.Parse(C[1]), int.Parse(C[2])].changeLocation(int.Parse(C[3]), int.Parse(C[4]));
-                        canMove=true;
                         if(flag)
                         {
                             MessageBox.Show("You Lose");
@@ -115,6 +115,14 @@ namespace Chess
                             f.ShowDialog();
                             this.Close();
                         }
+                        break;
+                    case "6":
+                        MessageBox.Show("You Win");
+                        //todo: 切換至主畫面
+                        //mainForm.Visible=  true;
+                        Form2 f1 = new Form2(T, Th_main, MyName);
+                        f1.ShowDialog();
+                        this.Close();
                         break;
                 }      
             }
@@ -215,8 +223,6 @@ namespace Chess
                             Piece canEat = CandPoint[i].canEat;
                             int CoX = CandPoint[i].Location.X;
                             int CoY = CandPoint[i].Location.Y;
-                            Console.WriteLine(CoX);
-                            Console.WriteLine(CoY);
                             DrawTarget(CoX, CoY, pc.side, pc.id, canEat);
                         }
                         cantMove:;
@@ -540,38 +546,28 @@ namespace Chess
             {
                 piece[0, id].changeLocation(tg.CoX, tg.CoY);
                 string msg = OpponentName+"|"+"0"+"|"+id+"|"+tg.CoX+"|"+tg.CoY;
-                Send("5"+msg);
                 canMove=false;
                 if(tg.canEat != null && tg.canEat.type == "general")
                 {
-
-                        MessageBox.Show("You Win");
-
-                    //todo: 切換至主畫面
-                    mainForm.Visible=true;
-                    this.Close();
-                    //Form2 f = new Form2(T,Th_main,MyName);
-                    //f.ShowDialog();
-
-                }   
+                    Send("6"+msg);
+                }
+                else
+                {
+                    Send("5" + msg);
+                }
             }
             else
             {
                 piece[1, id].changeLocation(tg.CoX, tg.CoY);
                 string msg = OpponentName+"|"+"1"+"|"+id+"|"+tg.CoX+"|"+tg.CoY;
-                Send("5"+msg);
                 canMove=false;
                 if(tg.canEat != null && tg.canEat.type == "general")
                 {
-
-                    MessageBox.Show("You Win");
-
-                    //todo: 切換至主畫面
-                    //mainForm.Visible=true;
-                    Form2 f = new Form2(T,Th_main,MyName);
-                    f.ShowDialog();
-                    this.Close();
-
+                    Send("6"+msg);
+                }
+                else
+                {
+                    Send("5" + msg);
                 }
             }         
             Situation.selecting = !Situation.selecting;

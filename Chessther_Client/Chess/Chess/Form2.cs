@@ -26,6 +26,7 @@ namespace Chess
         public Form2(Socket t, Thread th, string user){
             InitializeComponent();
             T=t;
+            th.Abort();
             User=user;
             CheckForIllegalCrossThreadCalls = false; //忽略跨執行緒錯誤
             TextBox3.Text=User;
@@ -65,7 +66,7 @@ namespace Chess
                 }
                 catch (Exception)//產生錯誤時
                 {
-                    T.Close();//關閉通訊器
+                    //T.Close();//關閉通訊器
                     ListBox1.Items.Clear();//清除線上名單
                     MessageBox.Show("伺服器斷線了！");//顯示斷線
                     Button1.Enabled = true;//連線按鍵恢復可用
@@ -101,12 +102,7 @@ namespace Chess
                         {
                             //選擇確認
                             Send("4"+C[1]+"|"+C[0]);
-                            string opponentName = C[0];
-                            Form1 f = new Form1(User, opponentName, T, Th, 1);
-                            f.getForm=this;
-                            this.Hide();
-                            f.ShowDialog();
-                         
+                            //string opponentName = C[0];
                         }
                         else if (dr == DialogResult.Cancel)
                         {
@@ -115,11 +111,20 @@ namespace Chess
                         }
                         break;
                     case "4"://對手同意對戰
-                            string OpponentName = Str;                       
-                            Form1 f1 = new Form1(User, OpponentName, T, Th, 0);
-                            f1.getForm=this;
-                            this.Hide();
-                            f1.ShowDialog();
+                        string[] c = Str.Split('|');
+                        string OpponentName=c[0];
+                        Form1 f1;
+                        if (OpponentName.Equals(User)) {
+                            OpponentName = c[1];
+                            f1 = new Form1(User, OpponentName, T, Th, 1);
+                        }
+                        else
+                        {
+                            f1 = new Form1(User, OpponentName, T, Th, 0);
+                        }
+                        f1.getForm=this;
+                        this.Hide();
+                        f1.ShowDialog();
                            
                         break;
                     case "M":
@@ -150,7 +155,11 @@ namespace Chess
         {
             if (ListBox1.SelectedIndex < 0)//未選取邀請對象命令碼
             {
-                TextBox4.Text += "請選取要邀請對象";
+                TextBox4.Text += "請選取要邀請對象\n";
+            }
+            else if(ListBox1.SelectedItem.Equals(User))
+            {
+                TextBox4.Text += "請不要邀請自己好嗎\n";
             }
             else//有選取邀請對象
             {

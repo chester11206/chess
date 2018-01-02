@@ -51,7 +51,7 @@ function router(d, socket){
             break;
         case '3':       //收到邀請
             var C= data.split("|");
-            if(clients[findSocket(C[1]).opponent]==null)
+            if(clients[findSocket(C[1])].opponent==null)
                 SendTo(d[0]+C[0]+"|"+C[1],C[1]);
             else
                 SendTo("2"+"Sorry, "+C[1]+" is busy playing with others", C[0]);
@@ -61,10 +61,20 @@ function router(d, socket){
             var C= data.split("|");
             clients[findSocket(C[0])].opponent=C[1];
             clients[findSocket(C[1])].opponent=C[0];
-            SendTo(d[0]+C[0], C[1]);
+            console.log(socket.opponent);
+            SendTo(d, C[1]);
+            SendTo(d, C[0]);
         case '5':
             var C = data.split("|");
             SendTo(d,C[0]);
+            break;
+        case '6':       //finish
+            var C = data.split("|");
+            socket.write("6");
+            SendTo("5"+data,C[0]);
+            var opponentID=findSocket(socket.opponent);
+            clients[opponentID].opponent=null;
+            socket.opponent=null;
             break;
         
     }
