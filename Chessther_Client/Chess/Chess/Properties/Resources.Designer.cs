@@ -63,6 +63,16 @@ namespace Chess.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap _32fdec66_b333_4a4a_affe_0b03cfbcfee4 {
+            get {
+                object obj = ResourceManager.GetObject("32fdec66-b333-4a4a-affe-0b03cfbcfee4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap bang_black {
             get {
                 object obj = ResourceManager.GetObject("bang_black", resourceCulture);
