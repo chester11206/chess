@@ -30,8 +30,13 @@ namespace Chess
             User=user;
             CheckForIllegalCrossThreadCalls = false; //忽略跨執行緒錯誤
             TextBox3.Text=User;
+<<<<<<< HEAD
             //string IP = TextBox1.Text;//伺服器IP
             int Port = int.Parse(TextBox2.Text);//伺服器Port
+=======
+            string IP = TextBox1.Text;//伺服器IP
+            int Port = 9000;//伺服器Port
+>>>>>>> 72217ebfded95c6a6b5d2b818ed0e70b6ed55dd0
             //建立通訊物件，參數代表可以雙向通訊的TCP連線
             try
             {
@@ -182,7 +187,7 @@ namespace Chess
             CheckForIllegalCrossThreadCalls = false; //忽略跨執行緒錯誤
             User = TextBox3.Text;//使用者名稱
             string IP = TextBox1.Text;//伺服器IP
-            int Port = int.Parse(TextBox2.Text);//伺服器Port
+            int Port = 9000;//伺服器Port
             //建立通訊物件，參數代表可以雙向通訊的TCP連線
             try
             {
