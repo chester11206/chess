@@ -41,11 +41,11 @@ function router(d, socket){
             //socket.write("M"+"Hello "+ socket.name+", Welcome to CHESSther, please only type English OAO ");
             SendAll(onlineList());
             break;
-        case '1':
+        case '1':       //廣播
             SendAll(d);
             //socket.write("M"+"You just said: "+data+" in public.");
             break;
-        case '2':
+        case '2':       //私訊
             var C= data.split("|");
             SendTo(d[0]+C[0],C[1]);
             break;
@@ -64,11 +64,11 @@ function router(d, socket){
             console.log(socket.opponent);
             SendTo(d, C[1]);
             SendTo(d, C[0]);
-        case '5':
+        case '5':       //遊戲內棋步傳輸
             var C = data.split("|");
             SendTo(d,C[0]);
             break;
-        case '6':       //finish
+        case '6':       //遊戲結束
             var C = data.split("|");
             socket.write("6");
             SendTo("5"+data,C[0]);

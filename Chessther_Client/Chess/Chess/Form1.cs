@@ -87,7 +87,7 @@ namespace Chess
                 catch (Exception)//產生錯誤時
                 {
                     T.Close();//關閉通訊器
-                    MessageBox.Show("伺服器斷線了！");//顯示斷線
+                    MessageBox.Show("伺服器斷線了！!!");//顯示斷線
                     Th_chess.Abort();//刪除執行緒
                 }
                 Msg = Encoding.Default.GetString(B, 0, inLen); //解讀完整訊息

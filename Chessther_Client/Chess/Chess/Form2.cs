@@ -30,7 +30,7 @@ namespace Chess
             User=user;
             CheckForIllegalCrossThreadCalls = false; //忽略跨執行緒錯誤
             TextBox3.Text=User;
-            string IP = TextBox1.Text;//伺服器IP
+            //string IP = TextBox1.Text;//伺服器IP
             int Port = int.Parse(TextBox2.Text);//伺服器Port
             //建立通訊物件，參數代表可以雙向通訊的TCP連線
             try
@@ -122,7 +122,7 @@ namespace Chess
                         {
                             f1 = new Form1(User, OpponentName, T, Th, 0);
                         }
-                        f1.getForm=this;
+                        //f1.getForm=this;
                         this.Hide();
                         f1.ShowDialog();
                            
