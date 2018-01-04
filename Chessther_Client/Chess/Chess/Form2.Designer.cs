@@ -185,10 +185,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::Chess.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(67, -25);
+            this.pictureBox1.Image = global::Chess.Properties.Resources._32fdec66_b333_4a4a_affe_0b03cfbcfee4;
+            this.pictureBox1.Location = new System.Drawing.Point(36, -82);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(548, 554);
+            this.pictureBox1.Size = new System.Drawing.Size(627, 643);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 114;
             this.pictureBox1.TabStop = false;
