@@ -100,9 +100,13 @@ namespace Chess
                         bool flag = false;
                         string[] C = Str.Split('|');
                         if(PieceExist(int.Parse(C[3]),int.Parse(C[4]))!=null){
-                            if(PieceExist(int.Parse(C[3]),int.Parse(C[4])).type.Equals("general")){
+
+                            if (PieceExist(int.Parse(C[3]),int.Parse(C[4])).type.Equals("general")){
                                 flag=true;
                             }
+                            Piece tem = PieceExist(int.Parse(C[3]), int.Parse(C[4]));
+                            this.Controls.Remove(tem);
+                            tem.changeLocation(-1, -1);
                         }
                         
                         piece[int.Parse(C[1]), int.Parse(C[2])].changeLocation(int.Parse(C[3]), int.Parse(C[4]));

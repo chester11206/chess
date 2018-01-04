@@ -19,24 +19,23 @@ namespace Chess
         Socket T;//通訊物件
         Thread Th;//網路監聽執行緒
         string User;//使用者
+        bool first = true;
         public Form2()
         {
             InitializeComponent();
         }
         public Form2(Socket t, Thread th, string user){
             InitializeComponent();
+            first = false;
             T=t;
             th.Abort();
             User=user;
             CheckForIllegalCrossThreadCalls = false; //忽略跨執行緒錯誤
             TextBox3.Text=User;
-<<<<<<< HEAD
+// HEAD
             //string IP = TextBox1.Text;//伺服器IP
-            int Port = int.Parse(TextBox2.Text);//伺服器Port
-=======
-            string IP = TextBox1.Text;//伺服器IP
-            int Port = 9000;//伺服器Port
->>>>>>> 72217ebfded95c6a6b5d2b818ed0e70b6ed55dd0
+            //int Port = int.Parse(TextBox2.Text);//伺服器Port
+
             //建立通訊物件，參數代表可以雙向通訊的TCP連線
             try
             {
@@ -63,7 +62,7 @@ namespace Chess
             string Msg; //接收到的完整訊息
             string St; //命令碼
             string Str; //訊息內容(不含命令碼)
-            while (true)//無限次監聽迴圈
+            while (true)
             {
                 try
                 {
@@ -128,7 +127,14 @@ namespace Chess
                             f1 = new Form1(User, OpponentName, T, Th, 0);
                         }
                         //f1.getForm=this;
-                        this.Hide();
+                        if (first)
+                        {
+                            this.Hide();
+                        }
+                        else
+                        {
+                            this.Close();
+                        }
                         f1.ShowDialog();
                            
                         break;
@@ -196,6 +202,7 @@ namespace Chess
                 T.Connect(EP); //連上伺服器的端點EP(類似撥號給電話總機)
                 Th = new Thread(Listen); //建立監聽執行緒
                 Th.IsBackground = true; //設定為背景執行緒
+
                 Th.Start(); //開始監聽
                 TextBox4.Text = "已連線伺服器！" + "\r\n";
                 Send("0" + User);  //連線後隨即傳送自己的名稱給伺服器
