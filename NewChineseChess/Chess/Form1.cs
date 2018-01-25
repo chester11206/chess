@@ -456,6 +456,14 @@ namespace Chess
             Situation.side = !Situation.side;
             Situation.selecting = !Situation.selecting;
             Situation.index = -1;
+            if(tg.canEat != null && tg.canEat.type == "general")
+            {
+                if (Situation.side)
+                    MessageBox.Show("Red Win");
+                else
+                    MessageBox.Show("Black Win");
+                //todo: 切換至主畫面
+            }
         }
 
         // 當游標移到棋子上時改變游標樣式，失敗
